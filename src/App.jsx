@@ -46,6 +46,8 @@ const roomSliderImages = Object.entries(
   }));
 
 const reservadosWhatsapp = 'https://wa.me/34663414556';
+const kandhaviaMapsPlaceUrl = 'https://www.google.com/maps/place/Discoteca+Kandhavia/@40.96562,-5.661357,18.49z/data=!4m15!1m8!3m7!1s0xd3f2613fa6a0263:0x93b8bfd94ee80727!2sCalle+Bermejeros,+16,+37001+Salamanca!3b1!8m2!3d40.96562!4d-5.6611428!16s%2Fg%2F11q2nhngp4!3m5!1s0xd3f2613fa7ec819:0xb9b1537707189664!8m2!3d40.96562!4d-5.6611428!16s%2Fg%2F1vlk2vyj?hl=es-ES&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D';
+const kandhaviaMapsEmbedUrl = 'https://www.google.com/maps?q=Discoteca%20Kandhavia%2C%20Salamanca&z=18&output=embed';
 
 function SmartImage({ src, alt, className }) {
   if (!src) {
@@ -567,7 +569,11 @@ function HomePage() {
               <div className="contact-grid">
                 <div>
                   <h3>Dirección</h3>
-                  <p>Calle Bermejeros, 16, 37001 Salamanca</p>
+                  <p>
+                    <a href={kandhaviaMapsPlaceUrl} target="_blank" rel="noreferrer">
+                      Calle Bermejeros, 16, 37001 Salamanca
+                    </a>
+                  </p>
                 </div>
                 <div>
                   <h3>Telefono</h3>
@@ -619,7 +625,7 @@ function HomePage() {
               <div className="map-frame">
                 <iframe
                   title="Mapa de Kandhavia"
-                  src="https://www.google.com/maps?q=Calle%20Bermejeros%2016%2C%2037001%20Salamanca&z=16&output=embed"
+                  src={kandhaviaMapsEmbedUrl}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
