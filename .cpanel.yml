@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - /bin/bash ./scripts/cpanel-deploy.sh "$HOME/public_html"
+    - /bin/bash ./scripts/cpanel-deploy.sh "/home/kandhavi/public_html"

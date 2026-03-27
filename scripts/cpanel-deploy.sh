@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DEPLOYPATH="${1:-${DEPLOYPATH:-$HOME/public_html}}"
+DEPLOYPATH="${1:-${DEPLOYPATH:-/home/kandhavi/public_html}}"
 
 find_npm() {
   if command -v npm >/dev/null 2>&1; then
