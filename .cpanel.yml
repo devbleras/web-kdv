@@ -2,24 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kandhavi/public_html/
-    - >
-      /bin/bash -lc '
-      if command -v npm >/dev/null 2>&1; then
-        NPM_BIN="$(command -v npm)";
-      elif [ -x /opt/cpanel/ea-nodejs22/bin/npm ]; then
-        NPM_BIN=/opt/cpanel/ea-nodejs22/bin/npm;
-      elif [ -x /opt/cpanel/ea-nodejs20/bin/npm ]; then
-        NPM_BIN=/opt/cpanel/ea-nodejs20/bin/npm;
-      elif [ -x /opt/cpanel/ea-nodejs18/bin/npm ]; then
-        NPM_BIN=/opt/cpanel/ea-nodejs18/bin/npm;
-      elif [ -x /opt/cpanel/ea-nodejs16/bin/npm ]; then
-        NPM_BIN=/opt/cpanel/ea-nodejs16/bin/npm;
-      else
-        echo "npm no encontrado en el servidor" >&2;
-        exit 1;
-      fi;
-      "$NPM_BIN" ci --no-audit --no-fund;
-      "$NPM_BIN" run build
-      '
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R dist/. $DEPLOYPATH
