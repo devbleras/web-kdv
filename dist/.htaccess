@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+# Sirve archivos y directorios reales tal cual.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Fallback para rutas de la SPA como /reservados.
+RewriteRule ^ index.html [L]
